@@ -45,8 +45,8 @@ DETECTION_CLASSES = [
 HAZARDOUS_CLASSES = {"Mine/Cylinder-like Object", "Shipwreck", "Ghost Net"}
 
 # --- CORS ----------------------------------------------------------------
-CORS_ORIGINS = os.getenv(
-    "CORS_ORIGINS", "http://localhost:3000,http://localhost:5173"
+CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:8001,http://localhost:5173,https://sonaris1-6iqc68cvd-sonaris1.vercel.app").split(",") = os.getenv(
+    "CORS_ORIGINS = os.getenv("CORS_ORIGINS", "http://localhost:8001,http://localhost:5173,https://sonaris1-6iqc68cvd-sonaris1.vercel.app").split(",")", "http://localhost:3000,http://localhost:5173"
 ).split(",")
 
 # --- Misc ------------------------------------------------------------------
