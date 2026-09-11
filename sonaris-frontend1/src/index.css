@@ -1,0 +1,133 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+}
+
+html, body, #root {
+  height: 100%;
+}
+
+body {
+  @apply bg-abyss-950 text-slate-200 font-display antialiased;
+  background-image:
+    radial-gradient(circle at 15% 0%, rgba(45, 212, 191, 0.06), transparent 45%),
+    radial-gradient(circle at 85% 100%, rgba(20, 184, 166, 0.05), transparent 45%);
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #1a3a5c #081221;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #081221;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a3a5c;
+  border-radius: 4px;
+}
+
+:focus-visible {
+  outline: 2px solid #2dd4bf;
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ---------------------------------------------------------------------- */
+/* Reusable component primitives                                          */
+/* ---------------------------------------------------------------------- */
+
+.panel {
+  @apply bg-abyss-900/80 border border-abyss-700 rounded-lg backdrop-blur-sm;
+}
+
+.panel-raised {
+  @apply bg-abyss-850 border border-abyss-600 rounded-lg shadow-[0_8px_24px_-12px_rgba(0,0,0,0.6)];
+}
+
+.sonar-grid-bg {
+  background-image:
+    linear-gradient(rgba(94, 234, 212, 0.055) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(94, 234, 212, 0.055) 1px, transparent 1px);
+  background-size: 28px 28px;
+}
+
+.btn-primary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md bg-signal-600 px-4 py-2.5
+    text-sm font-medium text-abyss-950 transition-colors hover:bg-signal-500
+    focus-visible:outline-2 focus-visible:outline-signal-400 disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-secondary {
+  @apply inline-flex items-center justify-center gap-2 rounded-md border border-abyss-600 bg-abyss-850 px-4 py-2.5
+    text-sm font-medium text-slate-200 transition-colors hover:border-signal-500 hover:text-signal-400
+    focus-visible:outline-2 focus-visible:outline-signal-400 disabled:opacity-40 disabled:cursor-not-allowed;
+}
+
+.btn-ghost {
+  @apply inline-flex items-center justify-center gap-2 rounded-md px-3 py-2 text-sm font-medium
+    text-slate-400 transition-colors hover:text-signal-400 hover:bg-abyss-800
+    focus-visible:outline-2 focus-visible:outline-signal-400 disabled:opacity-40;
+}
+
+.badge {
+  @apply inline-flex items-center gap-1.5 rounded-full border px-2.5 py-1 text-xs font-medium tracking-wide;
+}
+
+.badge-ai {
+  @apply badge border-signal-500/40 bg-signal-500/10 text-signal-400;
+}
+
+.badge-demo {
+  @apply badge border-amber-500/40 bg-amber-500/10 text-amber-400;
+}
+
+.badge-risk-high {
+  @apply badge border-risk-high/40 bg-risk-high/10 text-risk-high;
+}
+
+.badge-risk-medium {
+  @apply badge border-risk-medium/40 bg-risk-medium/10 text-risk-medium;
+}
+
+.badge-risk-low {
+  @apply badge border-risk-low/40 bg-risk-low/10 text-risk-low;
+}
+
+.badge-status {
+  @apply badge border-slate-500/40 bg-slate-500/10 text-slate-300;
+}
+
+.field-label {
+  @apply text-xs font-medium uppercase tracking-wider text-slate-500;
+}
+
+.stat-card {
+  @apply panel-raised p-5 flex flex-col gap-1;
+}
+
+.divider {
+  @apply border-t border-abyss-700;
+}
+
+.skeleton {
+  @apply animate-pulse bg-abyss-700/60 rounded;
+}
+
+.link-inline {
+  @apply text-signal-400 underline decoration-signal-500/30 underline-offset-2 hover:decoration-signal-400;
+}
