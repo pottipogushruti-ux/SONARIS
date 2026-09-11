@@ -117,7 +117,7 @@ export function DetectionHistory() {
         </div>
 
         {loading && <LoadingBlock label="Loading detection history…" />}
-        {error && <ErrorState error={error} onRetry={refetch} />}
+        {Boolean(error) && <ErrorState error={String(error)} onRetry={refetch} />}
 
         {!loading && !error && (
           filtered.length === 0 ? (

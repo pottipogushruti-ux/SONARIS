@@ -84,7 +84,7 @@ export function LiveDetection() {
 
         {phase === 'error' && (
           <>
-            <ErrorState error={error} onRetry={run} />
+            <ErrorState error={String(error)} onRetry={run} />
           </>
         )}
 

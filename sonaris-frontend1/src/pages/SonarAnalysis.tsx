@@ -71,7 +71,7 @@ export function SonarAnalysis() {
             <UploadDropzone selected={selected} onSelect={setSelected} />
 
             {phase === 'error' && (
-              <ErrorState error={error} />
+              <ErrorState error={String(error)} />
             )}
 
             <div className="flex flex-wrap gap-2">

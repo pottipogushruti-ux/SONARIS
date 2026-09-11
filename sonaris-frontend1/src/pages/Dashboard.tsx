@@ -23,7 +23,7 @@ export function Dashboard() {
       />
 
       <div className="px-6">
-        {error && <ErrorState error={error} onRetry={refetch} />}
+        {Boolean(error) && <ErrorState error={String(error)} onRetry={refetch} />}
 
         {!error && (
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">

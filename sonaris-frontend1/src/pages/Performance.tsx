@@ -17,7 +17,7 @@ export function Performance() {
 
       <div className="px-6">
         {loading && <LoadingBlock label="Loading evaluation metrics…" />}
-        {error && <ErrorState error={error} onRetry={refetch} />}
+        {Boolean(error) && <ErrorState error={String(error)} onRetry={refetch} />}
 
         {!loading && !error && metrics && (
           metrics.evaluated ? (

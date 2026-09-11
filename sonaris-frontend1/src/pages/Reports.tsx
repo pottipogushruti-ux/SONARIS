@@ -17,7 +17,7 @@ export function Reports() {
 
       <div className="px-6">
         {loading && <LoadingBlock label="Loading missions…" />}
-        {error && <ErrorState error={error} onRetry={refetch} />}
+        {Boolean(error) && <ErrorState error={String(error)} onRetry={refetch} />}
 
         {!loading && !error && (
           (missions ?? []).length === 0 ? (

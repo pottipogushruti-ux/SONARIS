@@ -63,7 +63,7 @@ export function MissionMap() {
 
       <div className="px-6 flex-1 flex flex-col min-h-[420px]">
         {loading && <LoadingBlock label="Loading detection locations…" />}
-        {error && <ErrorState error={error} onRetry={refetch} />}
+        {Boolean(error) && <ErrorState error={String(error)} onRetry={refetch} />}
 
         {!loading && !error && (
           <>
